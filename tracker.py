@@ -9,9 +9,17 @@ class LogHandler:
         today = date.today().isoformat()
         if p.exists():
             with open('grocerylog.csv',newline='') as csvfile:
+                grocreader = csv.reader(csvfile,delimiter=',',quotechar='"')
+                grocreader.reverse()
+                for row in range(5):
+                    print(grocreader[row])
+            
+            
+            
+            with open('grocerylog.csv',newline='') as csvfile:
                 fieldnames = ['price','market','date','buyer']
-                writer = csv.DictWriter(grocerylog.csv, fieldnames=fieldnames)
-                writer.writeheader():
+                writer = csv.DictWriter('grocerylog.csv', fieldnames=fieldnames)
+                writer.writeheader()
                 writer.writerow({'price':price,'market':market,'date':today,'buyer':buyer})
         else:
             raise Exception("Grocery Log file not found.")
