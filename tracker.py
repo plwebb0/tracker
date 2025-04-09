@@ -5,7 +5,7 @@ from datetime import date
 class LogHandler:
     def grocerylog(self, price, market,buyer):
 
-        p = path('.Documents/grocerylog.csv')
+        p = path('C://users/pwleb/Documents/grocerylog.csv')
         today = date.today().isoformat()
         if p.exists():
             with open('grocerylog.csv',newline='') as csvfile:
