@@ -177,3 +177,6 @@ class lcd:
          for line in char:
             self.lcd_write_char(line)         
 
+lcd.__init__()
+lcd.lcd_write("test")
+lcd.lcd_display_string("This is pretty neat",1)
