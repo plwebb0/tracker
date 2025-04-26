@@ -1,19 +1,15 @@
-import tracker
-import lcd
-import constants
+#import constants
+#import tracker as tracker
 import sys
-
-p = sys.argv[0]
-dict={}
-for argcount, argument in enumerate(sys.argv):
-    dict['p{0}'.format(argcount)] = argument
-
-p = dict['p2']
-m = dict['p3']
-e = dict['p4']
+from time import sleep
+from rpi_lcd import LCD 
 
 
+lcd = LCD()
+for x in range(5):
+    lcd.text('HOLY SHIT THIS IS AMAZING #:' + str(x +1), 1 , 'center')
+    sleep(3) #Keep the text on screen for this many seconds
+    lcd.clear() #clear the screen
+    sleep(1)
 
 
-
-main(p,m,e)
